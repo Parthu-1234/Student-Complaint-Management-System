@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<h2>Student Complaint System</h2>
+
+<p>👤 Parthasarathi</p>
+
+</div>
+
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>Raise Complaint</h2>
+
+<form method="POST">
+
+<input type="text"
+name="title"
+placeholder="Complaint Title"
+required>
+
+
+<textarea
+name="description"
+placeholder="Complaint Description"
+required></textarea>
+
+
+<button>Submit</button>
+
+</form>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>My Complaints</h2>
+
+{% for c in complaints %}
+
+<div class="complaint-box">
+
+<p>
+
+<b>Title :</b>
+
+{{c[0]}}
+
+</p>
+
+
+<p>
+
+<b>Status :</b>
+
+{{c[1]}}
+
+</p>
+
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
